@@ -19,7 +19,6 @@ class Modbus485:
     def modbus485_read(self):
         ser = self.rs485
         bytesToRead = ser.inWaiting()
-        print("Bytes to Read:", bytesToRead)
         if bytesToRead > 0:
             out = ser.read(bytesToRead)
             data_array = [b for b in out]
