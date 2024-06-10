@@ -73,10 +73,10 @@ soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
 
 m485.modbus485_send(soil_temperature)
 time.sleep(1)
-m485.modbus485_read()
+# m485.modbus485_read()
 print(m485.modbus485_read_adc())
 
 m485.modbus485_send(soil_moisture)
 time.sleep(1)
-m485.modbus485_read()
+# m485.modbus485_read()
 print(m485.modbus485_read_adc())
