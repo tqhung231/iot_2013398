@@ -33,44 +33,78 @@ relay7_OFF = [7, 6, 0, 0, 0, 137, 172]
 relay8_ON = [8, 6, 0, 0, 255, 201, 19]
 relay8_OFF = [8, 6, 0, 0, 0, 137, 83]
 
-soil_temperature = [9, 3, 0, 6, 0, 1, 101, 112]
-soil_moisture = [9, 3, 0, 7, 0, 1, 52, 176]
+soil_temperature = [10, 3, 0, 6, 0, 1, 101, 112]
+soil_moisture = [10, 3, 0, 7, 0, 1, 52, 176]
 
-# m485.modbus485_send(relay1_ON)
-# time.sleep(1)
-# m485.modbus485_send(relay2_ON)
-# time.sleep(1)
-# m485.modbus485_send(relay3_ON)
-# time.sleep(1)
-# m485.modbus485_send(relay4_ON)
-# time.sleep(1)
-# m485.modbus485_send(relay5_ON)
-# time.sleep(1)
-# m485.modbus485_send(relay6_ON)
-# time.sleep(1)
-# m485.modbus485_send(relay7_ON)
-# time.sleep(1)
-# m485.modbus485_send(relay8_ON)
-# time.sleep(1)
+# Test relay ON/OFF
+m485.modbus485_send(relay1_ON)
+time.sleep(1)
+m485.modbus485_read()
 
-# time.sleep(1)
-# m485.modbus485_send(relay1_OFF)
-# time.sleep(1)
-# m485.modbus485_send(relay2_OFF)
-# time.sleep(1)
-# m485.modbus485_send(relay3_OFF)
-# time.sleep(1)
-# m485.modbus485_send(relay4_OFF)
-# time.sleep(1)
-# m485.modbus485_send(relay5_OFF)
-# time.sleep(1)
-# m485.modbus485_send(relay6_OFF)
-# time.sleep(1)
-# m485.modbus485_send(relay7_OFF)
-# time.sleep(1)
-# m485.modbus485_send(relay8_OFF)
-# time.sleep(1)
+m485.modbus485_send(relay2_ON)
+time.sleep(1)
+m485.modbus485_read()
 
+m485.modbus485_send(relay3_ON)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay4_ON)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay5_ON)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay6_ON)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay7_ON)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay8_ON)
+time.sleep(1)
+m485.modbus485_read()
+
+
+time.sleep(1)
+m485.modbus485_send(relay1_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay2_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay3_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay4_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay5_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay6_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay7_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+m485.modbus485_send(relay8_OFF)
+time.sleep(1)
+m485.modbus485_read()
+
+
+# Test soil temperature and moisture
 m485.modbus485_send(soil_temperature)
 time.sleep(1)
 # m485.modbus485_read()
