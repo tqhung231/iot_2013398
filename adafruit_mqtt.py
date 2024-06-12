@@ -1,5 +1,4 @@
 import json
-import sys
 
 from Adafruit_IO import MQTTClient
 
@@ -38,6 +37,15 @@ class Adafruit_MQTT:
 
     def message(self, client, feed_id, payload):
         print("Received: " + payload + " from " + feed_id)
+        # if feed_id == "cmd":
+        #     try:
+        #         data = json.loads(payload)
+        #         if data["cmd"] == "relay":
+        #             print("Relay command...")
+        #             print("Relay:", data["relay"])
+        #             print("State:", data["state"])
+        #     except Exception as e:
+        #         print("Error:", e)
         # if feed_id == "nutnhan1":
         #     if payload == "0":
         #         writeSerial("1")
