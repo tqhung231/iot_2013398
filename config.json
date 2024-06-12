@@ -1,5 +1,5 @@
 {
     "username": "tqhung231",
-    "feeds": ["task", "soil", "level", "monitor", "relay"],
+    "feeds": ["task", "taskList", "taskHistory", "soil", "level", "monitor"],
     "key": ["aio_", "CprR50YfmiOFYFgsFmJFfpxwnffZ"]
 }
