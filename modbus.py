@@ -1,3 +1,4 @@
+import random
 import struct
 import time
 
@@ -91,18 +92,30 @@ class SensorRelayController:
     def __init__(self, modbus):
         self.modbus = modbus
 
+    # def get_sensor_data(self):
+    #     # Get soil temperature
+    #     self.modbus.modbus485_send(self.soil_temperature_command)
+    #     time.sleep(1)
+    #     soil_temp = self.modbus.modbus485_read_adc()
+
+    #     # Get soil moisture
+    #     self.modbus.modbus485_send(self.soil_moisture_command)
+    #     time.sleep(1)
+    #     soil_moist = self.modbus.modbus485_read_adc()
+
+    #     return soil_temp, soil_moist
+
     def get_sensor_data(self):
         # Get soil temperature
-        self.modbus.modbus485_send(self.soil_temperature_command)
-        time.sleep(1)
-        soil_temp = self.modbus.modbus485_read_adc()
+        soil_temp = random.randint(20, 30)
+
+        # Get soil humidity
+        soil_humid = random.randint(20, 80)
 
         # Get soil moisture
-        self.modbus.modbus485_send(self.soil_moisture_command)
-        time.sleep(1)
-        soil_moist = self.modbus.modbus485_read_adc()
+        soil_moist = random.randint(20, 80)
 
-        return soil_temp, soil_moist
+        return soil_temp, soil_humid, soil_moist
 
     def control_relay(self, relay_num, state):
         if relay_num in self.relay_commands:
