@@ -16,7 +16,7 @@ from watering.test import WateringPredictionModel
 warnings.filterwarnings("ignore")
 
 
-class SmartRecyclingBin:
+class SmartFarm:
     def __init__(self, controller):
         # Save the current stdout
         self.original_stdout = sys.stdout
@@ -435,5 +435,5 @@ if __name__ == "__main__":
     m485 = Modbus485_(ser)
     controller = SensorRelayController(m485)
 
-    app = SmartRecyclingBin(controller)
+    app = SmartFarm(controller)
     app.start()
