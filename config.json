@@ -1,5 +1,5 @@
 {
     "username": "tqhung231",
-    "feeds": ["cmd", "sensor", "monitor"],
+    "feeds": ["task", "soil", "level", "monitor", "relay"],
     "key": ["aio_", "CprR50YfmiOFYFgsFmJFfpxwnffZ"]
 }

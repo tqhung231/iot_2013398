@@ -74,6 +74,26 @@ class Modbus485:
         return 404
 
 
+class Modbus485_:
+    def __init__(self, _rs485):
+        self.rs485 = _rs485
+
+    def modbus485_send(self, data):
+        return
+
+    def modbus485_read(self):
+        return []
+
+    def modbus485_clear_buffer(self):
+        pass
+
+    def modbus485_read_adc(self):
+        return 0
+
+    def modbus485_read_big_endian(self):
+        return 0
+
+
 class SensorRelayController:
     relay_commands = {
         1: ([1, 6, 0, 0, 255, 201, 138], [1, 6, 0, 0, 0, 137, 202]),
@@ -105,7 +125,7 @@ class SensorRelayController:
 
     #     return soil_temp, soil_moist
 
-    def get_sensor_data(self):
+    def get_soil_data(self):
         # Get soil temperature
         soil_temp = random.randint(20, 30)
 
@@ -116,6 +136,21 @@ class SensorRelayController:
         soil_moist = random.randint(20, 80)
 
         return soil_temp, soil_humid, soil_moist
+
+    def get_level_data(self):
+        # Get water level
+        water_level = random.randint(0, 100)
+
+        # Get mixer1 level
+        mixer1_level = random.randint(0, 100)
+
+        # Get mixer2 level
+        mixer2_level = random.randint(0, 100)
+
+        # Get mixer3 level
+        mixer3_level = random.randint(0, 100)
+
+        return water_level, mixer1_level, mixer2_level, mixer3_level
 
     def control_relay(self, relay_num, state):
         if relay_num in self.relay_commands:
