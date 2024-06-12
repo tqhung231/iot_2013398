@@ -95,12 +95,12 @@ class SensorRelayController:
         # Get soil temperature
         self.modbus.modbus485_send(self.soil_temperature_command)
         time.sleep(1)
-        soil_temp = self.modbus.modbus485_read_big_endian()
+        soil_temp = self.modbus.modbus485_read_adc()
 
         # Get soil moisture
         self.modbus.modbus485_send(self.soil_moisture_command)
         time.sleep(1)
-        soil_moist = self.modbus.modbus485_read_big_endian()
+        soil_moist = self.modbus.modbus485_read_adc()
 
         return soil_temp, soil_moist
 
