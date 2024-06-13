@@ -319,13 +319,6 @@ class SmartFarm:
                 prediction = self.wateringModel.preprocess_and_predict(input_data)
                 self.monitorData["watering"][area] = True if prediction == 1 else False
 
-        # (
-        #     self.levelData["water"],
-        #     self.levelData["mixer1"],
-        #     self.levelData["mixer2"],
-        #     self.levelData["mixer3"],
-        # ) = self.controller.get_level_data()
-
         for area in self.monitorData["watering"]:
             if self.monitorData["watering"][area]:
                 self.levelData["water"] -= 1
