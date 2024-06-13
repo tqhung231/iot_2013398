@@ -1,12 +1,12 @@
 {
     "name": "Lịch tưới 1",
-    "cycle": 3,
+    "cycle": 5,
     "task": {
         "mixer1": 20,
         "mixer2": 10,
         "mixer3": 30
     },
     "isActive": false,
-    "startTime": "16:04",
+    "startTime": "10:50",
     "endTime": "16:10"
   }

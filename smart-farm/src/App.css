@@ -1,0 +1,40 @@
+/* src/App.css */
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 8px 16px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-icon {
+  width: 50px;  /* Adjust the width to your desired size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 0px; /* Adjust spacing between the logo and the text */
+  margin-left: -10px;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000; /* Adjust the color to your preference */
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+.dashboard {
+  padding: 24px;
+}
+
+.custom-progress .ant-progress-circle-path {
+  stroke-width: 12px; /* Adjust this value to make the bar thicker */
+}
+
+.ant-progress-bg {
+  height: 50px !important;
+}

@@ -3,8 +3,6 @@ import joblib
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
 
 
@@ -90,30 +88,6 @@ if __name__ == "__main__":
     crop_type_encoder_path = os.path.join(dir, "crop_type_encoder.pkl")
     fertilizer_encoder_path = os.path.join(dir, "fertilizer_encoder.pkl")
 
-    # Load the dataset
-    file_path = os.path.join(dir, "fertilizer.csv")
-    df = pd.read_csv(file_path)
-
-    # Preprocess the data
-    # Convert categorical columns to numerical
-    soil_type_encoder = LabelEncoder()
-    df["Soil Type"] = soil_type_encoder.fit_transform(df["Soil Type"])
-
-    crop_type_encoder = LabelEncoder()
-    df["Crop Type"] = crop_type_encoder.fit_transform(df["Crop Type"])
-
-    fertilizer_encoder = LabelEncoder()
-    df["Fertilizer Name"] = fertilizer_encoder.fit_transform(df["Fertilizer Name"])
-
-    # Separate features and target
-    X = df.drop(columns=["Fertilizer Name"])
-    y = df["Fertilizer Name"]
-
-    # Split the dataset into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
-    )
-
     # Initialize the prediction model
     model = FertilizerPredictionModel(
         model_path,
@@ -122,12 +96,6 @@ if __name__ == "__main__":
         crop_type_encoder_path,
         fertilizer_encoder_path,
     )
-
-    # Calculate accuracy on the test dataset
-    accuracy = model.evaluate_model(X_test, y_test)
-
-    # Print the test accuracy
-    print(f"Test Accuracy: {accuracy}")
 
     # Predict for a single input
     input_data = {

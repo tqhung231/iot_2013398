@@ -239,6 +239,9 @@ class SmartFarm:
                 self.monitorData["mixer"]["mixer1"] = False
                 self.monitorData["mixer"]["mixer2"] = False
                 self.monitorData["mixer"]["mixer3"] = False
+                self.levelData["mixer1"] = 0
+                self.levelData["mixer2"] = 0
+                self.levelData["mixer3"] = 0
                 self.client.publish(
                     "taskList", json.dumps(self.taskList, ensure_ascii=False)
                 )
